@@ -1,9 +1,8 @@
-import React from 'react'
-import {GridLoader, HashLoader} from 'react-spinners'
+import {PulseLoader} from 'react-spinners'
 function Loader() {
   return (
     <div className='w-full flex items-center place-content-center'>
-      <HashLoader size={60} color='blue'/>
+      <PulseLoader size={15} color='#FF00FF'/>
     </div>
   )
 }
