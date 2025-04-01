@@ -12,7 +12,7 @@ function Chatbox() {
  return (
   <>
   <Header  />
-<div className='w-full mt-[80px] '>
+<div className='w-full mt-[80px]  '>
   
    <Banner/>
     <>
