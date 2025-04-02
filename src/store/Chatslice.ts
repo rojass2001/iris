@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSlice,  } from "@reduxjs/toolkit"
 import axios from "axios";
 type statetypes={
   answer:string,
@@ -8,7 +8,7 @@ type statetypes={
 };
 
 
-export const fetchdata=createAsyncThunk("chat/fetchdata",async(search)=>{
+export const fetchdata=createAsyncThunk("chat/fetchdata",async(search):Promise<string>=>{
     const res=await  axios.post("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAowVnzFyydc9A-r168HJ-uoyaYiVPYqmU",search);
     return res.data.candidates[0].content.parts[0].text 
 });
@@ -21,14 +21,14 @@ const chatslice=createSlice({
     name:"chat",
     initialState:INITIAL_STATE,
     reducers:{
-  setquestion:(state,action)=>{
+   setquestion:(state,action)=>{
     state.question= action.payload;   
-  }
+   }
     },
     extraReducers:(builder)=>{
       builder.addCase(fetchdata.pending,(state,action)=>{
        state.loading=true
-      console.log("pending",action.payload)
+       console.log("pending",action.payload)
       });
       builder.addCase(fetchdata.fulfilled,(state,action)=>{
         console.log("success")
