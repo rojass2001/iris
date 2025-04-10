@@ -8,7 +8,7 @@ type statetypes={
 };
 
 
-export const fetchdata=createAsyncThunk("chat/fetchdata",async(search):Promise<string>=>{
+export const fetchdata=createAsyncThunk("chat/fetchdata",async(search)=>{
     const res=await  axios.post("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAowVnzFyydc9A-r168HJ-uoyaYiVPYqmU",search);
     return res.data.candidates[0].content.parts[0].text 
 });
@@ -34,7 +34,6 @@ const chatslice=createSlice({
         console.log("success")
         state.answer=action.payload;
         console.log(action.payload)
-        //state.question=senddata.contents[0].parts[0].text;
         state.loading=false;
        });
        builder.addCase(fetchdata.rejected,(state,action)=>{

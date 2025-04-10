@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./globals.css";
 import Providers from "./Provider";
 
@@ -22,6 +24,7 @@ export default function RootLayout({
         className={inter.className}
       >
         <Providers>
+          <ToastContainer/>
         {children}
         </Providers>
       </body>
