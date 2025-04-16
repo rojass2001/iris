@@ -1,5 +1,5 @@
 import Header from './Header';
-import Input from './Input';
+import Input from './searchbar';
 import Banner from './Banner';
 import Loader from './Loader';
 import Ansandquestiongrid from './Ansandquestiongrid';
