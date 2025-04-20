@@ -1,10 +1,10 @@
 "use client"
-import { fetchdata, setquestion } from '@/store/Chatslice'
-import { AppDispatch } from '@/store/store'
+import { clearchat, fetchdata, setquestion } from '@/store/Chatslice'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+
 function useForm() {
-  const dispatch= useDispatch()
+  const dispatch = useDispatch()
   const [search,setsearch]=useState("")
   
    const send={
@@ -16,13 +16,18 @@ function useForm() {
     const submit = async (event) => {
         event.preventDefault()
         dispatch(setquestion(search))
-        dispatch(fetchdata(send))
+       dispatch(fetchdata(send))
+      
   }
   
   const handlechange = (e) => {
     setsearch(e.target.value)
   }
-  return {submit,handlechange,search}
+  const clearsearch = () => {
+    dispatch(clearchat())
+    setsearch("")
+  }
+  return {submit,handlechange,search,clearsearch}
 }
 
 export default useForm

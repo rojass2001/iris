@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import Chatslice from './Chatslice';
 
-
 export default function makeStore(){
 return configureStore({
     reducer:{

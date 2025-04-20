@@ -4,7 +4,7 @@ import axios from "axios";
 type statetypes={
   answer:string,
   loading:boolean,
-  question?:string
+  question:string
  
 };
 
@@ -16,7 +16,7 @@ export const fetchdata=createAsyncThunk("chat/fetchdata",async(search)=>{
 const INITIAL_STATE:statetypes={
     answer:"",
     loading:false,
-   question:""
+    question:""
 };
 const chatslice=createSlice({
     name:"chat",
@@ -24,7 +24,14 @@ const chatslice=createSlice({
     reducers:{
    setquestion:(state,action)=>{
     state.question= action.payload;   
-   }
+      },
+
+      clearchat: (state) => {
+       state.loading=false
+       state.question = "";
+       state.answer = ""; 
+     } 
+
     },
     extraReducers:(builder)=>{
       builder.addCase(fetchdata.pending,(state,action)=>{
@@ -43,5 +50,5 @@ const chatslice=createSlice({
     
     }
 })
-export const{setquestion}=chatslice.actions
+export const{setquestion,clearchat}=chatslice.actions
 export default chatslice.reducer

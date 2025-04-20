@@ -3,9 +3,9 @@ import React, { memo, useState } from 'react'
 import copy from 'clipboard-copy';
 import { IoMdCopy } from 'react-icons/io';
 import { toast } from 'react-toastify';
+
 function Copyclipboard({text}:{text:string}) {
     const [copied, setCopied] = useState<boolean>(false);
-   
     const  handleCopyClick=async():Promise<void> => {
         try {
           await copy(text);

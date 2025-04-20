@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import "./globals.css";
 import Providers from "./Provider";
 
-
 const inter= Inter( { subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,10 +22,10 @@ export default function RootLayout({
       <body
         className={inter.className}
       >
-        <Providers>
-          <ToastContainer/>
-        {children}
-        </Providers>
+      <Providers>
+        <ToastContainer />
+        {children} 
+      </Providers>
       </body>
     </html>
   );
