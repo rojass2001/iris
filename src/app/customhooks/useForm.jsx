@@ -13,11 +13,10 @@ function useForm() {
           }]
   }
   
-    const submit = async (event) => {
-        event.preventDefault()
+    const submit = async(event) => {
+         event.preventDefault()
         dispatch(setquestion(search))
-       dispatch(fetchdata(send))
-      
+        dispatch(fetchdata(send))
   }
   
   const handlechange = (e) => {

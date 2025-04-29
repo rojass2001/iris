@@ -1,10 +1,12 @@
-import {PulseLoader} from 'react-spinners'
+"use client"
+import { PulseLoader } from 'react-spinners'
+import Box from './Box'
+
 function Loader() {
   return (
-    <div className='w-full flex items-center place-content-center'>
+    <Box className='w-full flex items-center place-content-center'>
        <PulseLoader size={15} color='#FF00FF'/>
-    </div>
+    </Box>
   )
 }
-
 export default Loader

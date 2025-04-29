@@ -1,4 +1,5 @@
-import { createAsyncThunk, createSlice,  } from "@reduxjs/toolkit"
+"use client"
+import { createAsyncThunk, createSlice, } from "@reduxjs/toolkit"
 import axios from "axios";
 
 type statetypes={
@@ -8,10 +9,9 @@ type statetypes={
  
 };
 
-
-export const fetchdata=createAsyncThunk("chat/fetchdata",async(search)=>{
-    const res=await  axios.post("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAowVnzFyydc9A-r168HJ-uoyaYiVPYqmU",search);
-    return res.data.candidates[0].content.parts[0].text 
+export const fetchdata = createAsyncThunk("chat/fetchdata", async (search) => {
+  const res = await axios.post("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAowVnzFyydc9A-r168HJ-uoyaYiVPYqmU", search); 
+  return res.data.candidates[0].content.parts[0].text 
 });
 const INITIAL_STATE:statetypes={
     answer:"",
