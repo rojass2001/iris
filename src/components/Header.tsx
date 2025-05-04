@@ -1,5 +1,3 @@
-"use client" // Ensures the component runs on the client-side in Next.js App Router
-
 import React from 'react'
 import Box from './Box' // Custom wrapper component (likely for styling)
 import Text from './Text' // Custom text component for typography abstraction

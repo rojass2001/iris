@@ -1,5 +1,4 @@
-"use client" // Required for client-side interactivity in Next.js (App Router)
-
+"use client" // Indicates this component is a client component in Next.js
 import Box from "./Box" // Wrapper component, likely adds consistent layout/styling
 import Text from "./Text" // Custom text component for typography abstraction
 import { memo } from 'react';

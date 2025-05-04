@@ -1,5 +1,3 @@
-"use client" // Ensures the slice runs on the client-side (necessary for interactive components in Next.js)
-
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit" // Import necessary Redux Toolkit methods
 import axios from "axios" // Import Axios for HTTP requests
 
