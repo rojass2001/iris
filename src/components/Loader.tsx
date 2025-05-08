@@ -1,4 +1,3 @@
-"use client" // Ensures the component is rendered on the client-side in Next.js App Router
 
 import { PulseLoader } from 'react-spinners' // Importing the PulseLoader spinner from react-spinners
 import Box from './Box' // Custom Box component used for layout and styling

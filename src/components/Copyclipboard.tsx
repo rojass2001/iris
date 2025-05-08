@@ -23,9 +23,9 @@ function Copyclipboard({ text }: { text: string }) {
   }
 
   return (
-    <Box onClick={handleCopyClick} className="rounded-full text-white">
+    <Box onClick={handleCopyClick} className="rounded-full text-pink-500">
       {/* Render the copy icon inside a Box component */}
-      <IoMdCopy className="bg-gradient-to-r rounded-full text-3xl from-pink-600 via-purple-500 to-pink-500" />
+      <IoMdCopy className="text-3xl" />
     </Box>
   )
 }

@@ -1,9 +1,7 @@
 "use client" // Ensures the component is client-side (necessary for interactive elements in Next.js)
 
 import { MdArrowForward } from 'react-icons/md' // Icon for submit button (right arrow)
-import { useSelector } from 'react-redux' // Access Redux store
 import Copyclipboard from './Copyclipboard' // Component to copy text to clipboard
-import { Rootstate } from '@/store/store' // Type definition for Redux state
 import useForm from '@/app/customhooks/useForm' // Custom hook for form handling (search input)
 import Form from './Form' // Custom form component for consistent layout and functionality
 import Newchat from './Newchat' // Button to clear search and start a new chat
@@ -13,9 +11,6 @@ import Button from './Button' // Custom button component for actions
 function Input() {
   // Destructure the form handling functions and state from the custom hook
   const { handlechange, submit, search, clearsearch } = useForm()
-
-  // Access the answer from the Redux store
-  const { answer } = useSelector((state: Rootstate) => state.chat)
 
   return (
     <>
@@ -38,7 +33,7 @@ function Input() {
           </Button>
           
           {/* Copy answer to clipboard functionality */}
-          <Copyclipboard text={answer} />
+          <Copyclipboard text={search} />
         </Form>
       </Box>
 

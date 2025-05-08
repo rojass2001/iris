@@ -5,8 +5,8 @@ import React, { memo } from 'react'
 // Define the props for the Button component
 type ButtonProps = {
   onClick?: () => Promise<void> | void // Optional click handler (can be async)
-  children: React.ReactNode           // Content inside the button (usually text or elements)
-  className?: string                  // Optional CSS classes (e.g., Tailwind, custom styles)
+  children: React.ReactNode            // Content inside the button (usually text or elements)
+  className?: string                   // Optional CSS classes (e.g., Tailwind, custom styles)
   type?: "submit" | "reset" | "button" // Button behavior type
 }
 

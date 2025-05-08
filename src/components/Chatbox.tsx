@@ -24,7 +24,6 @@ function Chatbox() {
           {/* Conditionally render Loader or Q&A content based on loading state */}
           {loading ? <Loader /> : <Ansandquestiongrid />}
         </Box>
-
         <Input /> {/* Input field at the bottom for user interaction */}
       </Box>
     </>
